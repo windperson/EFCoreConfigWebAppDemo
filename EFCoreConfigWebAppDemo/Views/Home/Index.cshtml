@@ -1,8 +1,40 @@
-﻿@{
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Microsoft.FeatureManagement.AspNetCore
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <br/>
+
+    <feature name="MyFeatureA-1">
+        <p>This can only be seen if '<code>MyFeature A-1</code>' is enabled.</p>
+    </feature>
+    <feature name="MyFeatureA-1" negate="true">
+        <p>This will be shown if '<code>MyFeature A-1</code>' is disabled.</p>
+    </feature>
+
+    <feature name="MyFeatureA-2">
+        <p>This can only be seen if '<code>MyFeature A-2</code>' is enabled.</p>
+    </feature>
+    <feature name="MyFeatureA-2" negate="true">
+        <p>This will be shown if '<code>MyFeature A-2</code>' is disabled.</p>
+    </feature>
+
+    <feature name="MyFeatureB-1">
+        <p>This can only be seen if '<code>MyFeature B-1</code>' is enabled.</p>
+    </feature>
+    <feature name="MyFeatureB-1" negate="true">
+        <p>This will be shown if '<code>MyFeature B-1</code>' is disabled.</p>
+    </feature>
+    <feature name="MyFeatureB-2">
+        <p>This can only be seen if '<code>MyFeature B-2</code>' is enabled.</p>
+    </feature>
+    <feature name="MyFeatureB-2" negate="true">
+        <p>This will be shown if '<code>MyFeature B-2</code>' is disabled.</p>
+    </feature>
 </div>
